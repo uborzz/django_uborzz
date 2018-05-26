@@ -22,5 +22,5 @@ class Post(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name='posts')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(null=True)
-    create_by = models.ForeignKey(User, on_delete=models.SET("Usuario Borrado"), related_name='posts')
+    created_by = models.ForeignKey(User, on_delete=models.SET("Usuario Borrado"), related_name='posts')
     updated_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='+')
